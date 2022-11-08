@@ -7,7 +7,6 @@ wn.title('Gerador de QR Code da Massa')
 wn.geometry('600x600')
 wn.config(bg='lightsteelblue')  # merely changes colors after init
 
-
 # 3 steps:
 # create a label to take the url as text
 # locate and also name the QR code for saving
@@ -40,8 +39,19 @@ label_loc = Label(frame_loc, text='Onde salvar: ', bg='ghostwhite', fg='black',
 loc = Entry(frame_loc, font='Century 12')
 loc.place(relx=0.1, rely=0.55, relwidth=0.7, relheight=0.3)
 
+# the name variable for the generateCode() function
+# the size variable for the generateCode() function
+# the button to generate
+
 wn.mainloop()
 
+
 def generateCode():
-    # qr = qrcode.QRCode(version=size.get(), box_size=10, border=5)
-    pass
+    qr = qrcode.QRCode(version=size.get(), box_size=10, border=5)
+    # size will be passed from the tkinter window
+    qr.add_data(text.get())
+    qr.make(fit=True)
+    img = qr.make_image()  # from PIL
+    fileDir = loc.get() + '\\' + name.get()  # if the dir string is passed incorrectly ??
+    img.save(f'{fileDir}.png')
+    messagebox.showinfo('Código gerado com sucesso no local indicado')
