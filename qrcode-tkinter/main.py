@@ -26,14 +26,16 @@ label_input = Label(frame_input, text='Digite a URL:', fg='black',
                     font=('Times', 16, 'bold'))
 label_input.place(relx=0.1, rely=0.2, relheight=0.08)
 text = Entry(frame_input, font='Century 12')
-text.place(relx=0.1, rely=0.33, relwidth=0.7, relheight=0.33)
+text.place(relx=0.1, rely=0.33, relwidth=0.7, relheight=0.15)
 
 # input for the location to save the QR
-frame_loc = Frame(wn, bg='lightsteelblue')
-frame_loc.place(relx=0.1, rely=0.35, relwidth=1, relheight=0.2)
+frame_loc = Frame(wn, bg='steelblue')
+frame_loc.place(relx=0.15, rely=0.44, relwidth=0.7, relheight=0.2)
 
-label_loc = Label(frame_loc, text='Onde salvar: ', bg='ghostwhite', fg='black',
-                  font=('Times', 16, 'bold'))
+label_loc = Label(frame_loc, text='Onde salvar: ', fg='black',
+                  font=('Times', 18, 'bold'))
+label_loc.place(relx=0, rely=0.1, relwidth=1, relheight=0.2)
+
 loc = Entry(frame_loc, font='Century 12')
 loc.place(relx=0.1, rely=0.55, relwidth=0.7, relheight=0.3)
 
