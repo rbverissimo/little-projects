@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 wn = Tk()
 wn.title('Gerador de QR Code da Massa')
-wn.geometry('600x600')
+wn.geometry('700x700')
 wn.config(bg='lightsteelblue')  # merely changes colors after init
 
 # 3 steps:
@@ -39,8 +39,14 @@ label_loc = Label(frame_loc, text='Onde salvar: ', bg='ghostwhite', fg='black',
 loc = Entry(frame_loc, font='Century 12')
 loc.place(relx=0.1, rely=0.55, relwidth=0.7, relheight=0.3)
 
-# the name variable for the generateCode() function
 # the size variable for the generateCode() function
+frame_size = Frame(wn, bg='lightsteelblue')
+frame_size.place(relx=0.1, rely=0.75, relwidth=0.7, relheight=0.2)
+
+label_size = Label(frame_size, text='Tamanho ente 1 e 40 para o QR Code: ',
+                   bg='ghostwhite', fg='black', font=('Times', 16, 'bold'))
+label_size.place(relx=0.05, rely=0.2, relheight=0.08)
+# the name variable for the generateCode() function
 # the button to generate
 
 wn.mainloop()
